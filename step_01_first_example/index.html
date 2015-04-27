@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="">
 <head lang="en">
     <meta charset="UTF-8">
     <title>First Example</title>
 </head>
-<body>
+<body ng-app ng-init="r = 1; g = 255; b = 1; a = 1; name = 'Peter';">
+    <h1>AngularJS Workshop - {{'now' + '!'}}</h1>
 
-</body>
+
+    R: <input type="range" min="0" max="255" step="1" ng-model="r"><br />
+    G: <input type="range" min="0" max="255" step="1" ng-model="g"><br />
+    B: <input type="range" min="0" max="255" step="1" ng-model="b"><br />
+    Name: <input type="text" ng-model="name">
+
+
+    <div style="height: 200px; width: 200px; background-color: rgba({{r}}, {{g}}, {{b}}, {{a}})">
+
+        <span style="color: rgba({{255 - r}}, {{255 - g}}, {{ 255  - b}}, 1)">
+            {{ name }}
+        </span>
+
+    </div>
+
+    <script src="../bower_components/angular/angular.js"></script>
+    </body>
 </html>

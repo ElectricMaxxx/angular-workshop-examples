@@ -1,0 +1,3 @@
+# ignore packages from node and bower
+bower_components/
+node_modules/

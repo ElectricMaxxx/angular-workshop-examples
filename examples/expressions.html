@@ -1,10 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="">
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
 </head>
 <body>
+    <!-- Ausgabe von Text -->
+    <p>
+        {{'Ausgabe von'}}<br />
+        {{'einfachem Tex'}}
+    </p>
 
+    <!-- Ausdrücke ausgeben -->
+    <p>
+        {{'Ausgabe von Ausdrücken: '+ '(1+1) = ' + (1+1)}}
+    </p>
+
+    <!-- Ausgabe von Variablen -->
+    <p ng-init="name='Max';">
+        Mein Name ist: {{name}}
+    </p>
+
+    <script src="../bower_components/angular/angular.js"></script>
 </body>
 </html>

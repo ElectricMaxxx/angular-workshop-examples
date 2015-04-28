@@ -4,8 +4,32 @@
     <meta charset="UTF-8">
     <title>First Example</title>
 </head>
-<body>
+<body ng-init="user.name = 'Max'; list[0] = 'item'; a = 3; b = 4; ">
     <h1>AngularJS Workshop - {{'now' + '!'}}</h1>
+
+
+    <!-- Ausgabe von Text -->
+    <p>
+        {{'Ausgabe von'}}<br />
+        {{'einfachem Tex'}}
+    </p>
+
+    <!-- Ausdrücke ausgeben -->
+    <p>
+        {{'Ausgabe von Ausdrücken: '+ '(1+1) = ' + (1+1)}}
+    </p>
+    <p>
+        {{'Ausgabe von Ausdrücken: '+ '(a+b) = ' + (a+b)}}
+    </p>
+
+
+    <!-- Ausgabe von Werten -->
+    <p>
+        Mein Name ist: {{user.name}}
+    </p>
+    <p>
+        Eintrag 0 in der Liste ist: {{list[0]}}
+    </p>
 
     <script src="../bower_components/angular/angular.js"></script>
     </body>

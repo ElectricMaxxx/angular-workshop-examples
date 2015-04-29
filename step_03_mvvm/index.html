@@ -3,8 +3,52 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>MVVM - Model View ViewModel</title>
+
+    <link type="text/css" rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
 </head>
-<body>
+<body ng-controller="UserController">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-3">
+            <div class="input-group">
+                <input type="text" class="form-control" ng-model="user.firstName" placeholder="Firstname ..." />
+            </div>
+            <div class="input-group">
+                <input type="text" class="form-control" ng-model="user.surName" placeholder="Surname ..." />
+            </div>
+            <div class="input-group">
+                <input type="text" class="form-control" ng-model="user.userName" placeholder="Username ..." />
+            </div>
+            <div class="input-group">
+                <input class="form-control" type="email" ng-model="user.email" placeholder="Email ..." />
+            </div>
+        </div>
+        <div class="col-md-3">
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-info">FullName: {{getFullName()}}</li>
+                <li class="list-group-item list-group-item-info">Username: {{user.userName}}</li>
+                <li class="list-group-item list-group-item-info">Firstname: {{user.firstName}}</li>
+                <li class="list-group-item list-group-item-info">Surname: {{user.surName}}</li>
+                <li class="list-group-item list-group-item-info">Email: {{user.email}}</li>
+            </ul>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-3">
+            <div class="input-group">
+                <input type="number" ng-model="a" />
+            </div>
+            <div class="input-group">
+                <input type="number" ng-model="b" />
+            </div>
+        </div>
+        <div class="col-md-3">Die Summe ist: {{add()}}</div>
+        <div class="col-md-3"></div>
+    </div>
+
 
 <script src="../bower_components/angular/angular.js"></script>
 <script type="application/javascript">
@@ -16,13 +60,14 @@
                     userName: "ElectricMaxxx",
                     email: "maximilian.berghoff@mayflower.de"
                 };
+                $scope.a = $scope.b = 0;
 
-                $scope.add = function (a,b) {
-                    return a + b;
+                $scope.add = function () {
+                    return $scope.a + $scope.b;
                 };
 
                 $scope.getFullName = function () {
-                    return $scope.user.firstName + $scope.user.surName;
+                    return $scope.user.firstName + " " + $scope.user.surName;
                 };
             });
 </script>

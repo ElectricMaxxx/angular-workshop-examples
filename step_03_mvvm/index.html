@@ -10,10 +10,19 @@
 <script type="application/javascript">
     angular.module("myModule", [])
             .controller('UserController', function ($scope) {
-                $scope.userName = 'ElectricMaxxx';
+                $scope.user = {
+                    firstName: "Maximilian",
+                    surName: "Berghoff",
+                    userName: "ElectricMaxxx",
+                    email: "maximilian.berghoff@mayflower.de"
+                };
 
                 $scope.add = function (a,b) {
                     return a + b;
+                };
+
+                $scope.getFullName = function () {
+                    return $scope.user.firstName + $scope.user.surName;
                 };
             });
 </script>

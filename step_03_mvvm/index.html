@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <title>MVVM - Model View ViewModel</title>
 </head>
-<body ng-controller="UserController">
+<body ng-controller="UserController as userCtrl">
     <p>
-        <input type="text" ng-model="userName" value="{{userName}}"> <br/>
-        Der Wert vom Feld ist: {{userName}}
+        <input type="text" ng-model="userCtrl.userName"> <br/>
+        Der Wert vom Feld ist: {{userCtrl.userName}}
 
     </p>
 <script src="../bower_components/angular/angular.js"></script>
 <script type="application/javascript">
     angular.module("myModule", [])
             .controller('UserController', function ($scope) {
-                $scope.userName = 'ElectricMaxxx';
+                var vm = this;
+
+                vm.userName = 'ElectricMaxxx';
             });
 </script>
 </body>

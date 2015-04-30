@@ -2,14 +2,46 @@
 <html ng-app="myModule">
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Pvider</title>
+    <title>Provider</title>
 </head>
-<body>
+<body ng-controller="MyController as myController">
+
+    Username: {{ myController.name }}<br />
+    Url: {{ myController.url }}
 
 
     <script src="../bower_components/angular/angular.js"></script>
     <script type="application/javascript">
-        angular.module('myModule', []);
+        angular.module('myModule', [])
+                .controller('MyController', MyController)
+                .provider('user', userProvider)
+                .config(['userProvider', function(userProvider) {
+                    userProvider.setUrl('/users');
+                }])
+        ;
+
+        function userProvider() {
+            var url = '', provider = this;
+
+            provider.setUrl = function(value) {
+                url = value;
+            };
+
+            provider.$get = function userFactory() {
+                return {
+                    name: 'Max',
+                    url: url
+                }
+            };
+
+            return provider;
+        }
+
+        MyController.$inject = ['user'];
+        function MyController(user) {
+            this.name = user.name;
+            this.url = user.url;
+        }
     </script>
 </body>
 </html>

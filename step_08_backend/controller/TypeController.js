@@ -5,7 +5,9 @@ angular.module("myModule")
         vm.currentType = {id: null, name: "", size: ""};
 
         vm.init = function () {
-            vm.types = TypeService.getAllTypes();
+            vm.types = TypeService.getAllTypes().then(function (types) {
+                vm.types = types;
+            });
         };
 
         vm.edit  = function (type) {

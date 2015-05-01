@@ -1,14 +1,29 @@
 angular.module("myModule")
-    .service("TypeService", [function () {
+    .service("TypeService", ["Restangular", function (Restangular) {
         var TypeService = this,
-            types = [
-                {id: 1, name: "Palete", size: "standard"},
-                {id: 2, name: "Seitenabhang", size: "standard"},
-            ];
+            types = [],
+            TypeResource = Restangular.service('types');
 
         TypeService.getAllTypes = function () {
-            return types;
+
+            return TypeResource.getList().then(function (typesJson) {
+                _.forEach(typesJson, function(typeJson) {
+                    updateTypes(typeJson);
+                });
+
+                return types;
+            });
         };
+
+        function updateTypes (type) {
+            var index = _.findIndex(types, function (listType) {
+                return listType.id === type.id;
+            });
+
+            if (-1 === index) {
+                types.push(type);
+            }
+        }
 
         TypeService.getTypeById = function (id) {
             var type =_.find(types, function (type) {

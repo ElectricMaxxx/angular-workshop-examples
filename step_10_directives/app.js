@@ -1,4 +1,4 @@
-angular.module("myModule", ['restangular'])
+angular.module("myModule", ['restangular', 'ngDraggable'])
     .config([
         "RestangularProvider", function(RestangularProvider) {
             RestangularProvider.setRequestSuffix('.json');

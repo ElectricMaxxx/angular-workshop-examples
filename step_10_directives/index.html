@@ -2,8 +2,9 @@
 <html ng-app="myModule">
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Backend Application</title>
+    <title>Direktive</title>
     <link type="text/css" rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="app.css"/>
 </head>
 <body>
 
@@ -68,14 +69,18 @@
             </div>
         </div>
     </div>
+    <type-map types="typeController.types"></type-map>
 </div>
+
 <script src="../bower_components/angular/angular.js"></script>
 
 <script src="../bower_components/lodash/dist/lodash.min.js"></script>
 <script src="../bower_components/restangular/dist/restangular.js"></script>
+<script src="../bower_components/ngDraggable/ngDraggable.js"></script>
 
 <script src="app.js"></script>
 <script src="controller/TypeController.js"></script>
 <script src="services/TypeService.js"></script>
+<script src="directives/TypeMap.js"></script>
 </body>
 </html>

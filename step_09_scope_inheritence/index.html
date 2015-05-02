@@ -74,7 +74,7 @@
                     scope: {
                         userNameInD: "@attrOneWay", // Expression wird erwarted, controller.userName würde als String kommen
                         emailInD: "=attrTwoWay", // model wird übergeben, Exception wenn nicht existent
-                        setName: "&attrFunctional" //
+                        setName: "&attrFunctional" // Verweist auf Funktion, die als String übergeben wird "Funktion-Wrapper"
                     },
                     controller: function ($scope) {
                         $scope.name = '';

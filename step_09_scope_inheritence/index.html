@@ -40,7 +40,7 @@
             <my-directive
                     attr-one-way="{{controller.userName}}"
                     attr-two-way="controller.email"
-                    attr-functional="">
+                    attr-functional="controller.setName(value)">
 
             </my-directive>
         </div>
@@ -73,7 +73,17 @@
                     templateUrl: "myDirective.tpl.html",
                     scope: {
                         userNameInD: "@attrOneWay", // Expression wird erwarted, controller.userName würde als String kommen
-                        emailInD: "=attrTwoWay" // model wird übergeben, Exception wenn nicht existent
+                        emailInD: "=attrTwoWay", // model wird übergeben, Exception wenn nicht existent
+                        setName: "&attrFunctional" //
+                    },
+                    controller: function ($scope) {
+                        $scope.name = '';
+
+                        $scope.setNameByForm = function () {
+                            var value = document.getElementById("name-value-d").value;
+                            $scope.name = value;
+                            $scope.setName({value: value});
+                        };
                     }
                 };
 

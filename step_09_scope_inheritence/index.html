@@ -39,7 +39,7 @@
         <div class="col-md-5">
             <my-directive
                     attr-one-way="{{controller.userName}}"
-                    attr-two-way=""
+                    attr-two-way="controller.email"
                     attr-functional="">
 
             </my-directive>
@@ -72,7 +72,8 @@
                     restrict: "E",
                     templateUrl: "myDirective.tpl.html",
                     scope: {
-                        userNameInD: "@attrOneWay" // Expression wird erwarted, controller.userName würde als String kommen
+                        userNameInD: "@attrOneWay", // Expression wird erwarted, controller.userName würde als String kommen
+                        emailInD: "=attrTwoWay" // model wird übergeben, Exception wenn nicht existent
                     }
                 };
 

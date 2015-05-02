@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Scope Isolation</title>
+    <link type="text/css" rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
+</head>
+<body>
+<div ng-controller="MyController as controller">
+    UserName im Controller: {{controller.userName}} <br />
+    Email im Controller: {{controller.email}}<br />
+    Name im Controller: {{controller.name}} <br />
+
+    <my-directive attr-one-way="" attr-two-way="" attr-functional=""></my-directive>
+</div>
+
+<script src="../bower_components/angular/angular.js"></script>
+
+<script type="application/javascript">
+    angular.module("myModule", [])
+            .controller('MyController', function () {
+                var vm = this;
+                vm.userName = 'ElectricMaxxx';
+                vm.email = "Maximilian.Berghoff@mayflower.de";
+                vm.name = '';
+
+                vm.setName = function (name) {
+                    vm.name = name;
+                };
+            })
+            .directive('myDirective', function () {
+                return {
+                    templateUrl: "myDirective.tpl.html"
+                };
+
+            });
+</script>
+</body>
+</html>

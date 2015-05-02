@@ -7,11 +7,45 @@
 </head>
 <body>
 <div ng-controller="MyController as controller">
-    UserName im Controller: {{controller.userName}} <br />
-    Email im Controller: {{controller.email}}<br />
-    Name im Controller: {{controller.name}} <br />
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
+            <div class="panel">
+                <div class="panel panel-heading">Werte im Controller</div>
+                <div class="panel panel-body">
+                    UserName im Controller: {{controller.userName}} <br/>
+                    Email im Controller: {{controller.email}}<br/>
+                    Name im Controller: {{controller.name}} <br/>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel panel-heading">Ändere im Controller</div>
+                <div class="panel panel-body">
+                    <div class="form-group">
+                        <input type="text" ng-model="controller.userName" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" ng-model="controller.email" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="name-value" class="form-control"/>
+                        <button class="form-control btn-success" ng-click="controller.setNameByForm();">
+                            Set name
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <my-directive
+                    attr-one-way=""
+                    attr-two-way=""
+                    attr-functional="">
 
-    <my-directive attr-one-way="" attr-two-way="" attr-functional=""></my-directive>
+            </my-directive>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
 </div>
 
 <script src="../bower_components/angular/angular.js"></script>
@@ -27,9 +61,15 @@
                 vm.setName = function (name) {
                     vm.name = name;
                 };
+
+                vm.setNameByForm = function () {
+                    var value = document.getElementById("name-value").value;
+                    vm.setName(value);
+                };
             })
             .directive('myDirective', function () {
                 return {
+                    restrict: "E",
                     templateUrl: "myDirective.tpl.html"
                 };
 

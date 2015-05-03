@@ -18,9 +18,17 @@
     "karma-coverage": "^0.3.1",
     "karma-html-reporter": "latest",
     "karma-jasmine": "latest",
-    "karma-story-reporter": "latest"
+    "karma-story-reporter": "latest",
+    "protractor": "~1.0.0",
+    "http-server": "^0.6.1"
   },
   "scripts": {
-    "test": "./node_modules/karma/bin/karma start step_11_tests/tests/karma.conf.js"
+    "prestart": "npm install",
+    "start": "http-server",
+    "test": "./node_modules/karma/bin/karma start step_11_tests/tests/karma.conf.js",
+    "preupdate-webdriver": "npm install",
+    "update-webdriver": "webdriver-manager update",
+    "preprotractor": "npm run update-webdriver",
+    "protractor": "protractor step_12_e2e/tests/protractor-conf.js"
   }
 }

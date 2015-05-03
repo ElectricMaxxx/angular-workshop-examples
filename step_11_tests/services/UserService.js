@@ -1,6 +1,7 @@
 angular.module("testModule")
-    .service("UserService", function () {
+    .service("UserService", ['truncate', function (truncate) {
         var url = '',
+            description = '',
             name = 'Max',
             service = this;
 
@@ -8,12 +9,17 @@ angular.module("testModule")
             url = value;
         };
 
+        service.setDescription = function (value) {
+            description = truncate(value, 10);
+        };
+
         service.createObject = function () {
             return {
                 name: name,
-                url: url
+                url: url,
+                description: description
             };
         };
 
         return service;
-    });
+    }]);

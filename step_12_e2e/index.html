@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>e2e Testing mit Protractor</title>
+    <link type="text/css" rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body ng-init="showMe = false;">
+
+    <div class="row">
+        <div class="col-md-6">
+            <button class="btn-success" ng-click="showMe = showMe === true ? false : true;">
+                {{showMe === true ? 'Hide' : 'Show'}}
+            </button>
+        </div>
+        <div class="col-md-6" ng-show="showMe">
+            <h1>Hidden Content</h1>
+        </div>
+    </div>
+    <script src="../bower_components/angular/angular.js"></script>
+    </body>
+</html>

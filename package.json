@@ -15,11 +15,12 @@
     "bower": "latest",
     "karma": "latest",
     "karma-chrome-launcher": "latest",
-    "karma-jasmine": "latest",
+    "karma-coverage": "^0.3.1",
     "karma-html-reporter": "latest",
+    "karma-jasmine": "latest",
     "karma-story-reporter": "latest"
   },
   "scripts": {
-    "test": "./node_modules/karma/bin/karma start"
+    "test": "./node_modules/karma/bin/karma start step_11_tests/tests/karma.conf.js"
   }
 }

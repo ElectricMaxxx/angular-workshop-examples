@@ -2,3 +2,4 @@
 bower_components/
 node_modules/
 examples/
+karma_html/

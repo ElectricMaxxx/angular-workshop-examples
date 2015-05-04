@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <div class="row">
+            <div class="col-md-12 panel">
+                <div class="panel panel-heading">99.X Musterabteilung</div>
+                <div class="panel panel-body">
+                    <div class="type-map" ng-drop="true" ng-drop-success="onDropComplete($data,$event)">
+                        <div
+                                ng-repeat="obj in droppedTypes track by obj.id"
+                                ng-drag="true"
+                                ng-drag-data="obj"
+                                draggable="false"
+                                class="type-button"
+                                ng-center-anchor="true">
+                                {{obj.name}} - {{obj.id}}
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-footer">
+                    <div class="types-as-buttons">
+                        <div
+                                ng-repeat="type in types"
+                                class="type-button"
+                                ng-drag="true"
+                                ng-drag-data="type"
+                                data-allow-transform="true"
+                                g-drag-success="onDragComplete($data,$event)"
+                                draggable="false"
+                                ng-center-anchor="true"
+                                >
+                            {{type.name}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+</div>

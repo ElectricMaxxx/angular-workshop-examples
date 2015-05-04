@@ -1,0 +1,19 @@
+.type-map {
+    height: 300px;
+    width: 100%;
+    border: 1px solid black;
+}
+
+.type-button {
+    border: 1px solid black;
+    height: 30px;
+    min-width: 100px;
+    padding: 5px;
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.panel.panel-heading {
+    background-color: #ea5b1c;
+}

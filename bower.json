@@ -1,14 +1,15 @@
 {
-    "name": "obi-workshop",
-    "version": "0.0.1",
-    "authors": [
-        "Maximilian Berghoff <maximilian.berghoff@mayflower.de>"
-    ],
-    "dependencies": {
-      "angular": "1.2.*",
-      "angular-mocks": "1.2.x",
-      "bootstrap": "3.2.x",
-      "lodash": "2.4.x",
-      "restangular": "~1.4.0"
-    }
+  "name": "obi-workshop",
+  "version": "0.0.1",
+  "authors": [
+    "Maximilian Berghoff <maximilian.berghoff@mayflower.de>"
+  ],
+  "dependencies": {
+    "angular": "1.2.*",
+    "angular-mocks": "1.2.x",
+    "bootstrap": "3.2.x",
+    "lodash": "2.4.x",
+    "restangular": "~1.4.0",
+    "angular-ui-router": "~0.2.14"
+  }
 }

@@ -24,3 +24,5 @@ als Aufgaben selbst implementiert werden.
 - AngularJS-Blog (deutsch): https://angularjs.de/blog
 - Promisses: https://angularjs.de/buch/angularjs-promises
 - Developers Guide: https://docs.angularjs.org/guide
+- Jasmine: http://jasmine.github.io/2.0/introduction.html
+- Testing promisses: http://brianmcd.com/2014/03/27/a-tip-for-angular-unit-tests-with-promises.html
